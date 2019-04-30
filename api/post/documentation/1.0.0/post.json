@@ -538,6 +538,12 @@
               },
               "type": {
                 "type": "string"
+              },
+              "posts": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
               }
             }
           },

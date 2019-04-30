@@ -21,7 +21,8 @@
       "type": "text"
     },
     "category": {
-      "model": "category"
+      "model": "category",
+      "via": "posts"
     },
     "user": {
       "model": "user",

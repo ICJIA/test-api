@@ -16,6 +16,10 @@
     },
     "type": {
       "model": "type"
+    },
+    "posts": {
+      "collection": "post",
+      "via": "category"
     }
   }
 }

@@ -4,11 +4,13 @@ type Category {
   updated_at: DateTime!
   name: String
   type: Type
+  posts(sort: String, limit: Int, start: Int, where: JSON): [Post]
 }
 
 input CategoryInput {
   name: String
   type: ID
+  posts: [ID]
 }
 
 type Comment {
@@ -146,6 +148,7 @@ type deleteUserPayload {
 input editCategoryInput {
   name: String
   type: ID
+  posts: [ID]
 }
 
 input editCommentInput {
