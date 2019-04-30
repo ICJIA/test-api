@@ -31,6 +31,10 @@
       "collection": "tag",
       "via": "posts",
       "dominant": true
+    },
+    "comments": {
+      "collection": "comment",
+      "via": "post"
     }
   }
 }

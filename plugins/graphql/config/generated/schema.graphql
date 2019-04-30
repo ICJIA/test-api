@@ -11,12 +11,35 @@ input CategoryInput {
   type: ID
 }
 
+type Comment {
+  id: ID!
+  created_at: DateTime!
+  updated_at: DateTime!
+  title: String
+  content: String
+  post: Post
+}
+
+input CommentInput {
+  title: String
+  content: String
+  post: ID
+}
+
 input createCategoryInput {
   data: CategoryInput
 }
 
 type createCategoryPayload {
   category: Category
+}
+
+input createCommentInput {
+  data: CommentInput
+}
+
+type createCommentPayload {
+  comment: Comment
 }
 
 input createPostInput {
@@ -72,6 +95,14 @@ type deleteCategoryPayload {
   category: Category
 }
 
+input deleteCommentInput {
+  where: InputID
+}
+
+type deleteCommentPayload {
+  comment: Comment
+}
+
 input deletePostInput {
   where: InputID
 }
@@ -117,6 +148,12 @@ input editCategoryInput {
   type: ID
 }
 
+input editCommentInput {
+  title: String
+  content: String
+  post: ID
+}
+
 input editFileInput {
   name: String
   hash: String
@@ -137,6 +174,7 @@ input editPostInput {
   category: ID
   user: ID
   tags: [ID]
+  comments: [ID]
 }
 
 input editRoleInput {
@@ -192,12 +230,15 @@ scalar JSON
 """The `Long` scalar type represents 52-bit integers"""
 scalar Long
 
-union Morph = UsersPermissionsMe | UsersPermissionsMeRole | Category | createCategoryPayload | updateCategoryPayload | deleteCategoryPayload | Post | createPostPayload | updatePostPayload | deletePostPayload | Tag | createTagPayload | updateTagPayload | deleteTagPayload | Type | createTypePayload | updateTypePayload | deleteTypePayload | UploadFile | UsersPermissionsPermission | UsersPermissionsRole | createRolePayload | updateRolePayload | deleteRolePayload | UsersPermissionsUser | createUserPayload | updateUserPayload | deleteUserPayload
+union Morph = UsersPermissionsMe | UsersPermissionsMeRole | Category | createCategoryPayload | updateCategoryPayload | deleteCategoryPayload | Comment | createCommentPayload | updateCommentPayload | deleteCommentPayload | Post | createPostPayload | updatePostPayload | deletePostPayload | Tag | createTagPayload | updateTagPayload | deleteTagPayload | Type | createTypePayload | updateTypePayload | deleteTypePayload | UploadFile | UsersPermissionsPermission | UsersPermissionsRole | createRolePayload | updateRolePayload | deleteRolePayload | UsersPermissionsUser | createUserPayload | updateUserPayload | deleteUserPayload
 
 type Mutation {
   createCategory(input: createCategoryInput): createCategoryPayload
   updateCategory(input: updateCategoryInput): updateCategoryPayload
   deleteCategory(input: deleteCategoryInput): deleteCategoryPayload
+  createComment(input: createCommentInput): createCommentPayload
+  updateComment(input: updateCommentInput): updateCommentPayload
+  deleteComment(input: deleteCommentInput): deleteCommentPayload
   createPost(input: createPostInput): createPostPayload
   updatePost(input: updatePostInput): updatePostPayload
   deletePost(input: deletePostInput): deletePostPayload
@@ -238,6 +279,7 @@ type Post {
   category: Category
   user: UsersPermissionsUser
   tags(sort: String, limit: Int, start: Int, where: JSON): [Tag]
+  comments(sort: String, limit: Int, start: Int, where: JSON): [Comment]
 }
 
 input PostInput {
@@ -247,11 +289,14 @@ input PostInput {
   category: ID
   user: ID
   tags: [ID]
+  comments: [ID]
 }
 
 type Query {
   category(id: ID!): Category
   categories(sort: String, limit: Int, start: Int, where: JSON): [Category]
+  comment(id: ID!): Comment
+  comments(sort: String, limit: Int, start: Int, where: JSON): [Comment]
   post(id: ID!): Post
   posts(sort: String, limit: Int, start: Int, where: JSON): [Post]
   tag(id: ID!): Tag
@@ -309,6 +354,15 @@ input updateCategoryInput {
 
 type updateCategoryPayload {
   category: Category
+}
+
+input updateCommentInput {
+  where: InputID
+  data: editCommentInput
+}
+
+type updateCommentPayload {
+  comment: Comment
 }
 
 input updatePostInput {
