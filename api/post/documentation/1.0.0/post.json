@@ -510,7 +510,9 @@
     "schemas": {
       "Post": {
         "required": [
-          "id"
+          "id",
+          "title",
+          "slug"
         ],
         "properties": {
           "id": {
@@ -679,12 +681,20 @@
           "caption": {
             "type": "string"
           },
-          "isDraft": {
-            "type": "boolean"
+          "excerpt": {
+            "type": "string"
+          },
+          "isPublished": {
+            "type": "boolean",
+            "default": true
           }
         }
       },
       "NewPost": {
+        "required": [
+          "title",
+          "slug"
+        ],
         "properties": {
           "title": {
             "type": "string"
@@ -716,8 +726,12 @@
           "caption": {
             "type": "string"
           },
-          "isDraft": {
-            "type": "boolean"
+          "excerpt": {
+            "type": "string"
+          },
+          "isPublished": {
+            "type": "boolean",
+            "default": true
           }
         }
       }

@@ -524,7 +524,9 @@
           },
           "post": {
             "required": [
-              "id"
+              "id",
+              "title",
+              "slug"
             ],
             "properties": {
               "id": {
@@ -563,7 +565,10 @@
               "caption": {
                 "type": "string"
               },
-              "isDraft": {
+              "excerpt": {
+                "type": "string"
+              },
+              "isPublished": {
                 "type": "boolean"
               }
             }

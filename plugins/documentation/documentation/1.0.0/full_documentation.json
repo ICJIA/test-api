@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "05/01/2019 7:46:23 AM"
+    "x-generation-date": "05/01/2019 8:34:27 AM"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -4653,7 +4653,9 @@
             "type": "array",
             "items": {
               "required": [
-                "id"
+                "id",
+                "title",
+                "slug"
               ],
               "properties": {
                 "id": {
@@ -4692,7 +4694,10 @@
                 "caption": {
                   "type": "string"
                 },
-                "isDraft": {
+                "excerpt": {
+                  "type": "string"
+                },
+                "isPublished": {
                   "type": "boolean"
                 }
               }
@@ -4732,7 +4737,9 @@
           },
           "post": {
             "required": [
-              "id"
+              "id",
+              "title",
+              "slug"
             ],
             "properties": {
               "id": {
@@ -4771,7 +4778,10 @@
               "caption": {
                 "type": "string"
               },
-              "isDraft": {
+              "excerpt": {
+                "type": "string"
+              },
+              "isPublished": {
                 "type": "boolean"
               }
             }
@@ -4832,7 +4842,9 @@
       },
       "Post": {
         "required": [
-          "id"
+          "id",
+          "title",
+          "slug"
         ],
         "properties": {
           "id": {
@@ -5001,12 +5013,20 @@
           "caption": {
             "type": "string"
           },
-          "isDraft": {
-            "type": "boolean"
+          "excerpt": {
+            "type": "string"
+          },
+          "isPublished": {
+            "type": "boolean",
+            "default": true
           }
         }
       },
       "NewPost": {
+        "required": [
+          "title",
+          "slug"
+        ],
         "properties": {
           "title": {
             "type": "string"
@@ -5038,8 +5058,12 @@
           "caption": {
             "type": "string"
           },
-          "isDraft": {
-            "type": "boolean"
+          "excerpt": {
+            "type": "string"
+          },
+          "isPublished": {
+            "type": "boolean",
+            "default": true
           }
         }
       },
@@ -5058,7 +5082,9 @@
             "type": "array",
             "items": {
               "required": [
-                "id"
+                "id",
+                "title",
+                "slug"
               ],
               "properties": {
                 "id": {
@@ -5097,7 +5123,10 @@
                 "caption": {
                   "type": "string"
                 },
-                "isDraft": {
+                "excerpt": {
+                  "type": "string"
+                },
+                "isPublished": {
                   "type": "boolean"
                 }
               }

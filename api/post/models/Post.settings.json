@@ -12,10 +12,13 @@
   },
   "attributes": {
     "title": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "slug": {
-      "type": "string"
+      "type": "string",
+      "unique": true,
+      "required": true
     },
     "content": {
       "type": "text"
@@ -45,7 +48,11 @@
     "caption": {
       "type": "string"
     },
-    "isDraft": {
+    "excerpt": {
+      "type": "text"
+    },
+    "isPublished": {
+      "default": true,
       "type": "boolean"
     }
   }

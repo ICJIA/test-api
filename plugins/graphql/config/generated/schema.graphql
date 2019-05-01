@@ -183,7 +183,8 @@ input editPostInput {
   comments: [ID]
   splash: ID
   caption: String
-  isDraft: Boolean
+  excerpt: String
+  isPublished: Boolean
 }
 
 input editRoleInput {
@@ -282,21 +283,22 @@ type Post {
   id: ID!
   created_at: DateTime!
   updated_at: DateTime!
-  title: String
-  slug: String
+  title: String!
+  slug: String!
   content: String
   category: Category
   user: UsersPermissionsUser
   splash: UploadFile
   caption: String
-  isDraft: Boolean
+  excerpt: String
+  isPublished: Boolean
   tags(sort: String, limit: Int, start: Int, where: JSON): [Tag]
   comments(sort: String, limit: Int, start: Int, where: JSON): [Comment]
 }
 
 input PostInput {
-  title: String
-  slug: String
+  title: String!
+  slug: String!
   content: String
   category: ID
   user: ID
@@ -304,7 +306,8 @@ input PostInput {
   comments: [ID]
   splash: ID
   caption: String
-  isDraft: Boolean
+  excerpt: String
+  isPublished: Boolean
 }
 
 type Query {
