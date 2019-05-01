@@ -20,12 +20,14 @@ type Comment {
   title: String
   content: String
   post: Post
+  user: UsersPermissionsUser
 }
 
 input CommentInput {
   title: String
   content: String
   post: ID
+  user: ID
 }
 
 input createCategoryInput {
@@ -155,6 +157,7 @@ input editCommentInput {
   title: String
   content: String
   post: ID
+  user: ID
 }
 
 input editFileInput {

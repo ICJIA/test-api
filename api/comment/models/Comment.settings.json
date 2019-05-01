@@ -20,6 +20,10 @@
     "post": {
       "model": "post",
       "via": "comments"
+    },
+    "user": {
+      "model": "user",
+      "plugin": "users-permissions"
     }
   }
 }

@@ -623,6 +623,9 @@
                 },
                 "post": {
                   "type": "string"
+                },
+                "user": {
+                  "type": "string"
                 }
               }
             }
