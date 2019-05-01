@@ -555,6 +555,15 @@
                   "items": {
                     "type": "string"
                   }
+                },
+                "splash": {
+                  "type": "string"
+                },
+                "caption": {
+                  "type": "string"
+                },
+                "isDraft": {
+                  "type": "boolean"
                 }
               }
             }

@@ -181,6 +181,9 @@ input editPostInput {
   user: ID
   tags: [ID]
   comments: [ID]
+  splash: ID
+  caption: String
+  isDraft: Boolean
 }
 
 input editRoleInput {
@@ -284,6 +287,9 @@ type Post {
   content: String
   category: Category
   user: UsersPermissionsUser
+  splash: UploadFile
+  caption: String
+  isDraft: Boolean
   tags(sort: String, limit: Int, start: Int, where: JSON): [Tag]
   comments(sort: String, limit: Int, start: Int, where: JSON): [Comment]
 }
@@ -296,6 +302,9 @@ input PostInput {
   user: ID
   tags: [ID]
   comments: [ID]
+  splash: ID
+  caption: String
+  isDraft: Boolean
 }
 
 type Query {

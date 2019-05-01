@@ -36,6 +36,17 @@
     "comments": {
       "collection": "comment",
       "via": "post"
+    },
+    "splash": {
+      "model": "file",
+      "via": "related",
+      "plugin": "upload"
+    },
+    "caption": {
+      "type": "string"
+    },
+    "isDraft": {
+      "type": "boolean"
     }
   }
 }

@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "04/30/2019 10:20:06 AM"
+    "x-generation-date": "05/01/2019 7:46:23 AM"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -4685,6 +4685,15 @@
                   "items": {
                     "type": "string"
                   }
+                },
+                "splash": {
+                  "type": "string"
+                },
+                "caption": {
+                  "type": "string"
+                },
+                "isDraft": {
+                  "type": "boolean"
                 }
               }
             }
@@ -4755,6 +4764,15 @@
                 "items": {
                   "type": "string"
                 }
+              },
+              "splash": {
+                "type": "string"
+              },
+              "caption": {
+                "type": "string"
+              },
+              "isDraft": {
+                "type": "boolean"
               }
             }
           },
@@ -4933,6 +4951,58 @@
                 }
               }
             }
+          },
+          "splash": {
+            "required": [
+              "id",
+              "name",
+              "hash",
+              "mime",
+              "size",
+              "url",
+              "provider"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "hash": {
+                "type": "string"
+              },
+              "sha256": {
+                "type": "string"
+              },
+              "ext": {
+                "type": "string"
+              },
+              "mime": {
+                "type": "string"
+              },
+              "size": {
+                "type": "string"
+              },
+              "url": {
+                "type": "string"
+              },
+              "provider": {
+                "type": "string"
+              },
+              "public_id": {
+                "type": "string"
+              },
+              "related": {
+                "type": "string"
+              }
+            }
+          },
+          "caption": {
+            "type": "string"
+          },
+          "isDraft": {
+            "type": "boolean"
           }
         }
       },
@@ -4964,6 +5034,12 @@
             "items": {
               "type": "string"
             }
+          },
+          "caption": {
+            "type": "string"
+          },
+          "isDraft": {
+            "type": "boolean"
           }
         }
       },
@@ -5014,6 +5090,15 @@
                   "items": {
                     "type": "string"
                   }
+                },
+                "splash": {
+                  "type": "string"
+                },
+                "caption": {
+                  "type": "string"
+                },
+                "isDraft": {
+                  "type": "boolean"
                 }
               }
             }
